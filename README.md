@@ -74,5 +74,55 @@ else:
 # This way, the if statement checks if both conditions (username in approved_list and organization_hours) are true before printing the appropriate message. It makes the code more compact and readable.
 
 
+ 
+# The condition in the while loop should be checking if connection_attempts is less than 3
+connection_attempts = 0
+while connection_attempts < 3:
+    print("connection could not be established") 
+    connection_attempts = connection_attempts + 1
+# This way, the loop will run as long as connection_attempts is less than 3, and it will print the specified string three times.
+
+
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147", "192.168.205.12", "192.168.200.48"]
+for ip_address in ip_addresses:
+    print(ip_address)
+# In each iteration, it will print a single element from the ip_addresses list.
+
+
+# This code checks if each IP address in ip_addresses is present in the allow_list and prints whether it's allowed or not.
+allow_list = ["192.168.243.140", "192.168.205.12", "192.168.151.162", "192.168.178.71", "192.168.86.232", "192.168.3.24", "192.168.170.243", "192.168.119.173"]
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147","192.168.205.12", "192.168.200.48"]          
+for i in ip_addresses:
+    if i in allow_list:
+        print("IP address", i, "is allowed")    
+    else:
+        print("IP address", i, "is not allowed")
+
+
+allow_list = ["192.168.243.140", "192.168.205.12", "192.168.151.162", "192.168.178.71", "192.168.86.232", "192.168.3.24", "192.168.170.243", "192.168.119.173"]
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147", "192.168.205.12", "192.168.200.48"]
+for i in ip_addresses:
+    if i in allow_list:
+        print("IP address", i, "is allowed")
+    else:
+        print("Further investigation of login activity required")
+        break
+#  if any IP address is not allowed, it will print the investigation message and then break out of the loop.
+
+
+employee_ids = set()  # Using a set to store unique employee IDs
+current_id = 5000
+while current_id <= 5150:
+    if current_id % 5 == 0:
+        employee_ids.add(current_id)
+        print("Generated employee ID:", current_id)
+    current_id += 5  # Increment by 5
+print("All unique employee IDs for the Sales department have been generated.")
+# This script initializes an empty set to store unique employee IDs. It then uses a while loop to iterate through numbers from 5000 to 5150 (inclusive). If the current number is divisible by 5, it adds it to the set of employee IDs and prints the generated ID. The loop continues until it has checked all numbers in the specified range.
+
+
+
+
+
 
 
