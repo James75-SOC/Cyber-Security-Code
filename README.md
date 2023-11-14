@@ -120,6 +120,13 @@ while current_id <= 5150:
 print("All unique employee IDs for the Sales department have been generated.")
 # This script initializes an empty set to store unique employee IDs. It then uses a while loop to iterate through numbers from 5000 to 5150 (inclusive). If the current number is divisible by 5, it adds it to the set of employee IDs and prints the generated ID. The loop continues until it has checked all numbers in the specified range.
 
+# FUNCTIONS
+def remaining_login_attempts(maximum_attempts, total_attempts):     # create a function and add parameters
+    return maximum_attempts - total_attempts       # use a return statement to return a calculation
+remaining_attempts = remaining_login_attempts(3, 3) # add the argument 3, 3 into the function and add the whole thing to a variable
+if remaining_attempts <= 0:   # use a conditional statement to return whats in the print function if remaining attempts is less than or equal to 0
+    print("Your account is locked")
+# In this example, the message prints because the calculation in the function results in 0
 
 
 
