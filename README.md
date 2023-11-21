@@ -139,7 +139,129 @@ login_analysis = analyze_logins("ejones", 9, 3) # Call `analyze_logins() and sto
 if login_analysis >= 3:
     print("Alert! This account has more login activity than normal.") # Conditional statement that displays an alert about the login activity if it's more than normal
 
+# using the append function to add users and computers to an approved list
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "2ye3lzg", "4n482ts", "a307vir"]
+# Assign `new_user` to the username of a new approved user
+new_user = "gesparza"
+# Assign `new_device` to the device ID of the new approved user
+new_device = "3rcv4w6"
+# Add that user's username and device ID to `approved_users` and `approved_devices` respectively
+approved_users.append("gesparza")
+approved_devices.append("3rcv4w6")
+# Display the contents of `approved_users`
+print(approved_users)
+# Diplay the contents of `approved_devices`
+print(approved_devices)
+# use the remove() function to take names off the lists
+
+# this code searches a list of users to check if they are on a list using a conditional statement
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Assign `username` to a username
+username = "sgilmore"
+# Conditional statement
+if username in approved_users:
+    print("The user", username, "is approved to access the system.")
+else:
+    print("the user", username, "is not approved to access the system.")
+
+# This code returns the position of a givien value in a list
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Assign `username` to a username
+username = "sgilmore"
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+# Display the value of `ind`
+print(ind)
+
+# this code demonstrates how you can find an index in one list and then use this index to display connected information in another list
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Assign `username` to a username
+username = "sgilmore"
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+# Display the device ID at the index that matches the value of `ind` in `approved_devices`
+print(approved_devices[ind])
+
+# this code determines if a username and device ID correspond. The conditional checks if the username is an element of the approved_devices and if the device_id stored at the same index as username matches the device_id entered.
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Assign `username` to a username
+username = "sgilmore"
+# Assign `device_id` to a device ID
+device_id = "4n482ts"
+# Assign `ind` to the index of `username` in `approved_users
+ind = approved_users.index(username)
+# Conditional statement
+if username in approved_users and device_id == approved_devices[ind]:
+    print("The username", username, "is approved to access the system.")
+    print(device_id, "is the assigned device for", username)
+
+# this matches the above code but runs an elif statement incase things don't match i.e like in this example
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Assign `username` to a username
+username = "sgilmore"
+# Assign `device_id` to a device ID
+device_id = "8rp2K75"
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+if username in approved_users and device_id == approved_devices[ind]:
+    print("The user", username, "is approved to access the system.")
+    print(device_id, "is the assigned device for", username)
+elif username in approved_users and device_id != approved_devices[ind]:
+# Handles the case when `username` belongs to `approved_users` but element at `ind` in `approved_devices` does not match `device_id`,
+# and displays two messages accordingly
+    print("The user", username, "is approved to access the system, but", device_id, "is not their assigned device.")
 
 
+#  A complete algorithm using a function and conditionals to automate the login process. In the following code, a nested conditional is used to achieve the goals of the algorithm. There is a conditional statement inside of another conditional statement. The outer conditional handles the case when the username is approved and the case when username is not approved. The inner conditional, which is placed inside the first if statement, handles the case when the username is approved and the device_id is correct, as well as the case when the username is approved and the device_id is incorrect.
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+# Define a function named `login` that takes in two parameters, `username` and `device_id`
+def login(username, device_id):
+
+    if username in approved_users:
+       print("The user", username, "is approved to access the system.")
+       # assign `ind` to the index of `username` in `approved_users`,
+        ind = approved_users.index(username)
+        # and execute the following conditional
+        # If `device_id` matches the element at the index `ind` in `approved_devices`,
+        if device_id == approved_devices[ind]:
+        # then display "______ is the assigned device for ______"
+        print(device_id, "is the assigned device for", username)
+        
+    else:
+        print(device_id, "is not their assigned device.")
+    else:
+        print("The username", username, "is not approved to access the system.")
+# Call the function defined to experiment with different username and device_id combinations
+login("elarson", "3rcv4w6")
+
+
+#notes
+# 1) Indexing a list is similar to indexing a string. Index values start at 0.
+# 2) The .append() method helps you add new elements to the end of lists.
+# 3) The .remove() method helps you remove elements from lists.
+# 4) The .index() method can be used on different types of sequences. They can be used not only with strings, but also with lists.
+# 5) With a list, the .index() method allows you to identify the position where a specified element is located in that list.
+# 6) If two lists contain information that correspond to each other in a specific order, you can use indices to pair elements from the lists together.
+# 7) Functions can be used to develop algorithms. When defining a function, you must specify the parameters it takes in and the actions it should execute.
 
 
